@@ -9,6 +9,12 @@ export default {
       type: 'string',
     },
     {
+      title: 'Dishes with this recipe:',
+      name: 'dishes',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'dish' } }],
+    },
+    {
       title: 'Ingredients',
       name: 'ingredients',
       type: 'array',
@@ -21,8 +27,8 @@ export default {
       of: [{ type: 'recipeStep' }],
     },
     {
-      title: 'Secrets',
-      name: 'secrets',
+      title: 'Tips',
+      name: 'tips',
       type: 'blockContent',
     },
   ],
