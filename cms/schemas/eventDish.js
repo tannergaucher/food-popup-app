@@ -15,8 +15,8 @@ export default {
       type: 'number',
     },
     {
-      title: 'Quantity',
-      name: 'quantity',
+      title: 'Available',
+      name: 'available',
       type: 'number',
     },
   ],

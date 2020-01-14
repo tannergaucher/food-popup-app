@@ -8,6 +8,13 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `77tt82xb`,
+        dataset: `production`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

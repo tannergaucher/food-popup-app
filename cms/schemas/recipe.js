@@ -4,9 +4,16 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Name',
-      name: 'name',
-      type: 'string',
+      title: 'Dish',
+      name: 'dish',
+      type: 'reference',
+      to: [{ type: 'dish' }],
+    },
+    {
+      title: 'Other dishes with this recipe:',
+      name: 'dishes',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'dish' } }],
     },
     {
       title: 'Ingredients',
@@ -21,9 +28,14 @@ export default {
       of: [{ type: 'recipeStep' }],
     },
     {
-      title: 'Secrets',
-      name: 'secrets',
+      title: 'Tips',
+      name: 'tips',
       type: 'blockContent',
     },
   ],
+  preview: {
+    select: {
+      title: 'dish.name',
+    },
+  },
 }
