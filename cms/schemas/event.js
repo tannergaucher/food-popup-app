@@ -9,6 +9,15 @@ export default {
       type: 'string',
     },
     {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 200,
+      },
+    },
+    {
       title: 'Date',
       name: 'date',
       type: 'datetime',
@@ -25,8 +34,8 @@ export default {
       of: [{ type: 'url' }],
     },
     {
-      title: 'Menu',
-      name: 'menu',
+      title: 'Menu Items',
+      name: 'menuItems',
       type: 'array',
       of: [{ type: 'eventDish' }],
     },

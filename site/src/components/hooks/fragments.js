@@ -13,42 +13,28 @@ export const SANITY_EVENT_FRAGMENT = graphql`
     date
     title
     socialLinks
-    menu {
+    menuItems {
       dish {
         ...SanityDishFragment
       }
       price
-      quantity
+      available
+    }
+  }
+`
+export const SANITY_RECIPE_FRAGMENT = graphql`
+  fragment SanityRecipeFragment on SanityRecipe {
+    id
+    dish {
+      ...SanityDishFragment
     }
   }
 `
 
 export const SANITY_DISH_FRAGMENT = graphql`
   fragment SanityDishFragment on SanityDish {
-    name
-    cuisine {
-      ...SanityCuisineFragment
-    }
-    image {
-      asset {
-        fluid(maxWidth: 800) {
-          ...GatsbySanityImageFluid
-        }
-      }
-    }
-    recipes {
-      ...SanityRecipeFragment
-    }
-  }
-`
-
-export const SANITY_RECIPE_FRAGMENT = graphql`
-  fragment SanityRecipeFragment on SanityRecipe {
     id
     name
-    ingredients {
-      ...SanityIngredientFragment
-    }
   }
 `
 

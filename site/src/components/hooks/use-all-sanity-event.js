@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const useAllSanityEvent = () => {
   const { allSanityEvent } = useStaticQuery(
     graphql`
-      query AllSanityEvent {
+      query {
         allSanityEvent {
           edges {
             node {

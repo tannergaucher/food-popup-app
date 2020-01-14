@@ -4,12 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Name',
-      name: 'name',
-      type: 'string',
+      title: 'Dish',
+      name: 'dish',
+      type: 'reference',
+      to: [{ type: 'dish' }],
     },
     {
-      title: 'Dishes with this recipe:',
+      title: 'Other dishes with this recipe:',
       name: 'dishes',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'dish' } }],
@@ -32,4 +33,9 @@ export default {
       type: 'blockContent',
     },
   ],
+  preview: {
+    select: {
+      title: 'dish.name',
+    },
+  },
 }
